@@ -38,6 +38,7 @@ import (
 	"unsafe"
 
 	"github.com/ethereum/go-ethereum/common/math"
+	"fmt"
 )
 
 /*
@@ -97,6 +98,7 @@ func (BitCurve *BitCurve) IsOnCurve(x, y *big.Int) bool {
 // affineFromJacobian reverses the Jacobian transform. See the comment at the
 // top of the file.
 func (BitCurve *BitCurve) affineFromJacobian(x, y, z *big.Int) (xOut, yOut *big.Int) {
+	fmt.Println("ok")
 	zinv := new(big.Int).ModInverse(z, BitCurve.P)
 	zinvsq := new(big.Int).Mul(zinv, zinv)
 

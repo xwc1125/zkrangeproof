@@ -45,11 +45,17 @@ func TestNegScalarBaseMulG1(t *testing.T) {
 	mb := Sub(new(big.Int).SetInt64(0), b)
 	mpb := new(bn256.G1).ScalarBaseMult(mb)
 	a := new(bn256.G1).Add(pb, mpb)
+	fmt.Println("######################################")
 	aBytes := a.Marshal()
-	for i := 0; i < len(aBytes); i++ {
+	fmt.Println(aBytes)
+	fmt.Println(a)
+	for i := 0; i < len(aBytes)-1; i++ {
 		if aBytes[i] != 0 {
 			t.Errorf("Assert failure: expected true, actual: %t", aBytes[i] == 0)
 		}
+	}
+	if aBytes[len(aBytes)-1] != 1 {
+		t.Errorf("Assert failure: expected true, actual: %t", aBytes[len(aBytes)-1] == 1)
 	}
 }
 
