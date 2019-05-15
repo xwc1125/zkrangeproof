@@ -143,7 +143,7 @@ func checkSignature(sig []byte) error {
 // Rangeproofs functions: should be separated from this file in the near future
 ////////////////////////////////////////////////////////////////////////////////////
 
-func RunRangeproof() {
+/*func RunRangeproof() {
 	C.test_rangeproof()
 }
 
@@ -169,4 +169,4 @@ func ProveRangeproof(dt *C.zkrp_t) {
 
 func VerifyRangeproof(dt *C.zkrp_t) (bool) {
 	return (C.verify_rangeproof(dt) == 1)
-}
+}*/
